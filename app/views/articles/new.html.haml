@@ -2,6 +2,13 @@
   .row
     .col-md-8.mx-auto
       %h1.text-center.text-danger New Article
+      - if @article.errors.any?
+        %br/
+        %ul.alert-danger
+          - @article.errors.each do |error|
+            %li= error.full_message
+            %br/
+        %br/
       = form_for @article do |f|
         .form-group
           %strong= f.label :headline
