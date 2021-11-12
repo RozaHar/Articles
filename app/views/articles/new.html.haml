@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-md-8.mx-auto
+      %h1.text-center.text-danger New Article
+      = form_for @article do |f|
+        .form-group
+          %strong= f.label :headline
+          = f.text_field :headline,class:"form-group form-control"
+        %br/
+        .form-group
+          = f.submit  class:"form-control btn btn-primary"
+      %br/
+      = link_to "Back",articles_path,class:"nav-link form-control btn btn-dark"
