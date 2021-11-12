@@ -7,3 +7,14 @@
       - @article.article_tags.each do |article_tag|
         %p= article_tag.tag
       %p= @article.created_at
+      %h2 Comments
+      = form_for([@article,@article.comments.build]) do |f|
+        .form-group
+          %strong= f.label :content
+          = f.text_area :content,class:"form-group form-control"
+        .form-group
+          = f.submit  class:"form-control btn btn-primary"
+      - @article.comments.each do |comment|
+        %p
+          %strong= comment.content
+        %hr/
