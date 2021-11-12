@@ -6,6 +6,7 @@ def index
 
   def new
   	@article = Article.new
+    @article.article_tags.build
   end
 
   def show
@@ -45,6 +46,6 @@ def index
 
   private
   	def article_params
-  		params.require(:article).permit(:headline,:content)
+  		params.require(:article).permit(:headline,:content,article_tags_attributes:[:id,:tag])
   	end
 end
