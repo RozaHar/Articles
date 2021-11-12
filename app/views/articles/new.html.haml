@@ -8,6 +8,10 @@
           = f.text_field :headline,class:"form-group form-control"
         %br/
         .form-group
+          %strong= f.label :content
+          = f.rich_text_area :content,class:"form-group form-control"
+        %br/
+        .form-group
           = f.submit  class:"form-control btn btn-primary"
       %br/
       = link_to "Back",articles_path,class:"nav-link form-control btn btn-dark"

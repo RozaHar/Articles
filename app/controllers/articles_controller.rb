@@ -45,6 +45,6 @@ def index
 
   private
   	def article_params
-  		params.require(:article).permit(:headline)
+  		params.require(:article).permit(:headline,:content)
   	end
 end
